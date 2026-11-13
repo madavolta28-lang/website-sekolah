@@ -1,4 +1,3 @@
-// ===== Fitur 1: Dark Mode dan Light Mode =====
 const tombolTema = document.getElementById("theme");
 tombolTema.addEventListener("click", function () {
   document.body.classList.toggle("dark-mode");
@@ -6,7 +5,7 @@ tombolTema.addEventListener("click", function () {
   tombolTema.textContent = gelap ? "☀️" : "🌙";
 });
 
-// ===== Fitur 2: Menu Navigasi Responsif =====
+
 const menu = document.getElementById("menu");
 const tombol = document.getElementById("hamburger");
 tombol.addEventListener("click", function () {
@@ -16,7 +15,7 @@ menu.querySelectorAll("a").forEach(function (link) {
   link.addEventListener("click", function () { menu.classList.remove("active"); });
 });
 
-// ===== Fitur 3: Pencarian Jurusan =====
+
 function cariJurusan() {
   let input = document.getElementById("cari").value.toLowerCase();
   let daftar = document.querySelectorAll(".jurusan");
@@ -29,7 +28,7 @@ function cariJurusan() {
   document.getElementById("kosong").hidden = ada > 0;
 }
 
-// ===== Fitur 4: Validasi Formulir Kontak =====
+
 function validasiForm(e) {
   e.preventDefault();
   let nama = document.getElementById("nama").value.trim();
@@ -44,7 +43,7 @@ function validasiForm(e) {
   return false;
 }
 
-// ===== Fitur 5: Galeri Foto Interaktif (modal) =====
+
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modalImg");
 document.querySelectorAll(".gallery img").forEach(function (foto) {
@@ -57,7 +56,7 @@ document.querySelectorAll(".gallery img").forEach(function (foto) {
 modal.addEventListener("click", function () { modal.hidden = true; });
 document.addEventListener("keydown", function (e) { if (e.key === "Escape") modal.hidden = true; });
 
-// ===== Fitur 6: Tombol Kembali ke Atas =====
+
 const tombolAtas = document.getElementById("top");
 window.addEventListener("scroll", function () {
   tombolAtas.hidden = window.scrollY < 300;
@@ -66,7 +65,7 @@ tombolAtas.addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// ===== Fitur 7: FAQ Accordion =====
+
 document.querySelectorAll(".faq-q").forEach(function (q) {
   q.addEventListener("click", function () {
     const item = q.parentElement;

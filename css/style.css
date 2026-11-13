@@ -1,5 +1,3 @@
-
-/* 1. VARIABEL WARNA */
 :root {
   --bg: #fffaf5;
   --bg2: #fff0e2;
@@ -13,7 +11,6 @@
   --shadow: 0 10px 30px rgba(170, 95, 30, .09);
 }
 
-/* 2. DARK MODE */
 body.dark-mode {
   --bg: #1e1915;
   --bg2: #2c211a;
@@ -27,7 +24,6 @@ body.dark-mode {
   --shadow: 0 10px 30px rgba(0, 0, 0, .2);
 }
 
-/* 3. PENGATURAN DASAR */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -66,7 +62,6 @@ a {
   color: #38271d;
 }
 
-/* 4. NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
@@ -135,7 +130,6 @@ a {
   display: none;
 }
 
-/* 5. HERO */
 .hero {
   position: relative;
   display: grid;
@@ -144,21 +138,11 @@ a {
   align-items: center;
   padding: 85px 6%;
   overflow: hidden;
-  background: linear-gradient(
-    120deg,
-    #ffead2,
-    #fff6eb,
-    #ffffff
-  );
+  background: linear-gradient(120deg, #ffead2, #fff6eb, #ffffff);
 }
 
 body.dark-mode .hero {
-  background: linear-gradient(
-    120deg,
-    #422b1c,
-    #2c211a,
-    #1e1915
-  );
+  background: linear-gradient(120deg, #422b1c, #2c211a, #1e1915);
 }
 
 .hero::before {
@@ -202,7 +186,6 @@ body.dark-mode .hero {
   transform: translateY(-5px);
 }
 
-/* 6. TOMBOL */
 .btn {
   display: inline-block;
   background: linear-gradient(135deg, #e77f25, #f5a64f);
@@ -222,7 +205,6 @@ body.dark-mode .hero {
   box-shadow: 0 12px 24px rgba(220, 125, 35, .3);
 }
 
-/* 7. SECTION */
 .section {
   padding: 75px 6%;
 }
@@ -237,7 +219,6 @@ body.dark-mode .hero {
   color: var(--primary-dark);
 }
 
-/* 8. GRID DAN CARD */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -276,7 +257,6 @@ body.dark-mode .hero {
   padding-left: 18px;
 }
 
-/* 9. CARD JURUSAN */
 .card.jurusan {
   position: relative;
   padding: 30px 24px;
@@ -284,11 +264,7 @@ body.dark-mode .hero {
   border-radius: 17px;
   border: 1px solid var(--border);
   border-top: 5px solid var(--jurusan-accent, var(--primary));
-  background: linear-gradient(
-    145deg,
-    var(--card),
-    var(--bg2)
-  );
+  background: linear-gradient(145deg, var(--card), var(--bg2));
   min-height: 195px;
   transition: .35s;
 }
@@ -306,41 +282,15 @@ body.dark-mode .hero {
   transition: .35s;
 }
 
-.card.jurusan:nth-child(1) {
-  --jurusan-accent: #e58a32;
-}
-
-.card.jurusan:nth-child(2) {
-  --jurusan-accent: #ed9c52;
-}
-
-.card.jurusan:nth-child(3) {
-  --jurusan-accent: #d97935;
-}
-
-.card.jurusan:nth-child(4) {
-  --jurusan-accent: #f0ad65;
-}
-
-.card.jurusan:nth-child(5) {
-  --jurusan-accent: #c8793e;
-}
-
-.card.jurusan:nth-child(6) {
-  --jurusan-accent: #e6a13e;
-}
-
-.card.jurusan:nth-child(7) {
-  --jurusan-accent: #df9251;
-}
-
-.card.jurusan:nth-child(8) {
-  --jurusan-accent: #bb7445;
-}
-
-.card.jurusan:nth-child(9) {
-  --jurusan-accent: #efb779;
-}
+.card.jurusan:nth-child(1) { --jurusan-accent: #e58a32; }
+.card.jurusan:nth-child(2) { --jurusan-accent: #ed9c52; }
+.card.jurusan:nth-child(3) { --jurusan-accent: #d97935; }
+.card.jurusan:nth-child(4) { --jurusan-accent: #f0ad65; }
+.card.jurusan:nth-child(5) { --jurusan-accent: #c8793e; }
+.card.jurusan:nth-child(6) { --jurusan-accent: #e6a13e; }
+.card.jurusan:nth-child(7) { --jurusan-accent: #df9251; }
+.card.jurusan:nth-child(8) { --jurusan-accent: #bb7445; }
+.card.jurusan:nth-child(9) { --jurusan-accent: #efb779; }
 
 .jurusan h3 {
   display: inline-block;
@@ -372,7 +322,6 @@ body.dark-mode .hero {
   transform: scale(1.3);
 }
 
-/* 10. FORM DAN INPUT */
 .search,
 input,
 textarea {
@@ -414,7 +363,6 @@ form .btn {
   margin-top: 16px;
 }
 
-/* 11. GALERI */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -435,7 +383,6 @@ form .btn {
   box-shadow: 0 8px 20px rgba(150, 90, 35, .16);
 }
 
-/* 12. FAQ ACCORDION */
 .faq {
   max-width: 720px;
 }
@@ -485,7 +432,6 @@ form .btn {
   color: var(--muted);
 }
 
-/* 13. FOOTER */
 .footer {
   text-align: center;
   padding: 30px;
@@ -494,7 +440,6 @@ form .btn {
   color: var(--muted);
 }
 
-/* 14. MODAL GALERI */
 .modal {
   position: fixed;
   inset: 0;
@@ -525,7 +470,6 @@ form .btn {
   cursor: pointer;
 }
 
-/* 15. TOMBOL KEMBALI KE ATAS */
 .top {
   position: fixed;
   right: 20px;
@@ -552,7 +496,6 @@ form .btn {
   display: none;
 }
 
-/* 16. RESPONSIVE */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
