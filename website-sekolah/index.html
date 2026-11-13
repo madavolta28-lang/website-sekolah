@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMK Negeri 2 Klaten - Website Profil Sekolah</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- 1. NAVBAR -->
+  <header class="navbar">
+    <a href="#beranda" class="brand">
+      <img src="images/logo.png" alt="Logo sekolah">
+      <span>SMK Negeri 2 Klaten</span>
+    </a>
+
+    <nav id="menu" class="menu">
+      <a href="#beranda">Beranda</a>
+      <a href="#profil">Profil</a>
+      <a href="#jurusan">Jurusan</a>
+      <a href="#fasilitas">Fasilitas</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <button id="theme" class="icon-btn" aria-label="Ganti tema">🌙</button>
+    <button id="hamburger" class="icon-btn hamburger" aria-label="Buka menu">☰</button>
+  </header>
+
+  <main>
+
+    <!-- 2. HERO / BERANDA -->
+    <section id="beranda" class="hero">
+      <div class="hero-text">
+        <h1>Membangun Generasi Cerdas dan Berkarakter</h1>
+        <p>
+          SMK Negeri 2 Klaten Contoh menyiapkan lulusan yang siap kerja,
+          siap kuliah, dan siap berwirausaha.
+        </p>
+        <a href="#jurusan" class="btn">Lihat Jurusan</a>
+      </div>
+
+      <img src="images/sekolah.jpg" alt="Gedung SMK Negeri 1 Contoh">
+    </section>
+
+    <!-- 3. PROFIL SEKOLAH -->
+    <section id="profil" class="section">
+      <h2>Profil Sekolah</h2>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Sejarah</h3>
+          <p>
+            SMK Negeri 2 Klaten berawal dari STM swasta yang dirintis pada 1 Agustus 1961 oleh Hadi Sanyoto,
+            Y. Rukido, dan Parjimin. Pada 1 Januari 1965, sekolah ini resmi menjadi STM Negeri Klaten.
+            Seiring perkembangannya, sekolah berpindah ke Desa Senden, Kecamatan Ngawen,
+            dan berganti nama menjadi SMK Negeri 2 Klaten pada tahun 1997.
+            Berbagai program keahlian terus dikembangkan untuk memenuhi kebutuhan dunia industri.
+            Hingga kini, SMK Negeri 2 Klaten berkomitmen menghasilkan lulusan yang kompeten, berkarakter,
+            siap kerja, dan mampu bersaing di tingkat global.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Visi</h3>
+          <p>
+            Menjadikan peserta didik unggul di bidang vokasi yang berkarakter mulia,
+            berdaya saing, berintegritas, dan cinta lingkungan
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Misi</h3>
+          <ul>
+            <li>Pengembangan kurikulum yang relevan dengan kebutuhan industri.</li>
+            <li>Membangun kerjasama dengan industri melalui program magang, guest teacher,
+                dan penelitian bersama.</li>
+            <li>Pendidikan karakter diintegrasikan ke dalam semua mata pelajaran
+                dan kegiatan sekolah.</li>
+            <li>Komitmen menjaga keberlanjutan dalam Sustainable Development Goals (SDGs).</li>
+            <li>Membangun kepercayaan diri untuk berani mengambil risiko.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. JURUSAN + FITUR 3: PENCARIAN -->
+    <section id="jurusan" class="section alt">
+      <h2>Kompetensi Keahlian</h2>
+
+      <input
+        type="text"
+        id="cari"
+        class="search"
+        placeholder="Cari jurusan, misalnya PPLG atau TKP"
+        onkeyup="cariJurusan()"
+      >
+
+      <div class="grid">
+
+        <article class="card jurusan">
+          <h3>PPLG</h3>
+          <p>
+            <strong>Pengembangan Perangkat Lunak dan Gim</strong><br>
+            Pemrograman web, aplikasi mobile, dan pembuatan gim.
+          </p>
+        </article>
+
+        <article class="card jurusan">
+          <h3>DPIB</h3>
+          <p>
+            <strong>Desain Pemodelan dan Informasi Bangunan</strong><br>
+            Menggambar dan memodelkan bangunan dengan aplikasi desain.
+          </p>
+        </article>
+
+        <article class="card jurusan">
+          <h3>TFLM</h3>
+          <p>
+            <strong>Teknik Fabrikasi Logam dan Manufaktur</strong><br>
+            Membuat dan merakit produk dari logam dengan mesin manufaktur.
+          </p>
+        </article>
+
+        <article class="card jurusan">
+          <h3>TPL</h3>
+          <p>
+            <strong>Teknik Pengelasan dan Fabrikasi Logam</strong><br>
+            Teknik las dan pembuatan konstruksi logam.
+          </p>
+        </article>
+
+        <article class="card jurusan">
+          <h3>TPM</h3>
+          <p>
+            <strong>Teknik Permesinan</strong><br>
+            Mengoperasikan mesin bubut, frais, dan CNC.
+          </p>
+        </article>
+
+        <article class="card jurusan">
+          <h3>TE</h3>
+          <p>
+            <strong>Teknik Elektronika</strong><br>
+            Merakit, memperbaiki, dan memprogram rangkaian elektronika.
+          </p>
+        </article>
+
+        <article class="card jurusan">
+          <h3>TITL</h3>
+          <p>
+            <strong>Teknik Instalasi Tenaga Listrik</strong><br>
+            Instalasi listrik rumah dan industri serta sistem kendali.
+          </p>
+        </article>
+
+        <article class="card jurusan">
+          <h3>TKP</h3>
+          <p>
+            <strong>Teknik Konstruksi dan Properti</strong><br>
+            Membangun dan merawat gedung serta perumahan.
+          </p>
+        </article>
+
+        <article class="card jurusan">
+          <h3>TO</h3>
+          <p>
+            <strong>Teknik Otomotif</strong><br>
+            Perawatan dan perbaikan kendaraan ringan dan sepeda motor.
+          </p>
+        </article>
+
+      </div>
+
+      <p id="kosong" class="muted" hidden>
+        Jurusan tidak ditemukan.
+      </p>
+    </section>
+
+    <!-- 5. FASILITAS SEKOLAH -->
+    <section id="fasilitas" class="section">
+      <h2>Fasilitas Sekolah</h2>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Laboratorium Komputer</h3>
+          <p>lab dengan komputer terbaru dan koneksi internet cepat.</p>
+        </article>
+
+        <article class="card">
+          <h3>Perpustakaan</h3>
+          <p>Ruang baca nyaman dengan koleksi buku cetak dan digital.</p>
+        </article>
+
+        <article class="card">
+          <h3>Bengkel Praktik</h3>
+          <p>Ruang praktik Semua Kompetensi Keahlian</p>
+        </article>
+
+        <article class="card">
+          <h3>Lapangan Olahraga</h3>
+          <p>Lapangan serbaguna untuk futsal, basket, dan upacara.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. GALERI + FITUR 5: MODAL FOTO -->
+    <section id="galeri" class="section alt">
+      <h2>Galeri Kegiatan</h2>
+
+      <div class="gallery">
+        <img src="images/upacara.jpeg" alt="Upacara bendera">
+        <img src="images/praktik.jpeg" alt="Praktik di laboratorium">
+        <img src="images/lomba.jpeg" alt="Lomba kompetensi siswa">
+        <img src="images/pentas .jpeg" alt="Kegiatan pramuka">
+        <img src="images/pramuka.jpeg" alt="Pentas seni">
+      </div>
+    </section>
+
+    <!-- 7. FAQ + FITUR 7: ACCORDION -->
+    <section id="faq" class="section">
+      <h2>Pertanyaan yang Sering Diajukan</h2>
+
+      <div class="faq">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Kapan pendaftaran siswa baru dibuka?
+          </button>
+          <div class="faq-a">
+            <p>Pendaftaran dibuka setiap bulan Mei hingga Juni.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Apa saja syarat pendaftaran?
+          </button>
+          <div class="faq-a">
+            <p>
+              Fotokopi ijazah atau SKL, kartu keluarga,
+              akta kelahiran, dan pas foto terbaru.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Apakah ada beasiswa?
+          </button>
+          <div class="faq-a">
+            <p>
+              Ada. Beasiswa tersedia untuk siswa berprestasi
+              dan siswa kurang mampu.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. KONTAK + FITUR 4: VALIDASI FORM -->
+    <section id="kontak" class="section alt">
+      <h2>Hubungi Kami</h2>
+
+      <div class="grid two">
+
+        <div class="card">
+          <h3>Alamat dan Kontak</h3>
+          <p>Jl. Senden Bramen, RT 13/RW 06 Senden, Ngawen, Klaten, Jawa Tengah, Indonesia</p>
+          <p>Email: smkn2@smkn2klaten.sch.id</p>
+          <p>Telepon: (0272) 3354021</p>
+        </div>
+
+        <form
+          class="card"
+          id="formKontak"
+          onsubmit="return validasiForm(event)"
+          novalidate
+        >
+          <label for="nama">Nama</label>
+          <input type="text" id="nama">
+
+          <label for="email">Email</label>
+          <input type="email" id="email">
+
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" rows="4"></textarea>
+
+          <button type="submit" class="btn">Kirim Pesan</button>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 9. FOOTER -->
+  <footer class="footer">
+    <p>
+      &copy; 2026 SMK Negeri 2 Klaten.
+      Seluruh hak cipta dilindungi.
+    </p>
+  </footer>
+
+  <!-- MODAL GALERI -->
+  <div id="modal" class="modal" hidden>
+    <span id="tutup" class="tutup" aria-label="Tutup">&times;</span>
+    <img id="modalImg" alt="">
+  </div>
+
+  <!-- FITUR 6: KEMBALI KE ATAS -->
+  <button id="top" class="top" aria-label="Kembali ke atas" hidden>
+    ↑
+  </button>
+
+  <!-- FILE JAVASCRIPT -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
