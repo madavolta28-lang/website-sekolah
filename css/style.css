@@ -1,25 +1,26 @@
 
 /* ===== 1. VARIABEL WARNA ===== */
 :root {
-  --bg: #f7f8f4;
-  --bg2: #eaf0ea;
-  --text: #12263a;
-  --muted: #55657a;
-  --primary: #1f7a5a;
-  --accent: #f2b705;
-  --card: #fff;
-  --border: #d9e2da;
+  --bg: #fffaf4;
+  --bg2: #fff0df;
+  --text: #39291e;
+  --muted: #817064;
+  --primary: #df8735;
+  --accent: #f2b66d;
+  --card: #ffffff;
+  --border: #f0dfcc;
 }
 
 /* ===== 2. DARK MODE ===== */
 body.dark-mode {
-  --bg: #0e1a22;
-  --bg2: #13232d;
-  --text: #e6edf1;
-  --muted: #9fb0bb;
-  --primary: #3fbf91;
-  --card: #182b36;
-  --border: #27414f;
+  --bg: #211a15;
+  --bg2: #30231a;
+  --text: #fff0e2;
+  --muted: #c2ad9b;
+  --primary: #f0a354;
+  --accent: #ffc477;
+  --card: #2b211a;
+  --border: #493629;
 }
 
 /* ===== 3. PENGATURAN DASAR ===== */
@@ -64,9 +65,10 @@ a {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 5%;
+  padding: 12px 5%;
   background: var(--card);
   border-bottom: 1px solid var(--border);
+  box-shadow: 0 3px 15px rgba(170, 100, 35, .08);
 }
 
 .brand {
@@ -75,11 +77,12 @@ a {
   gap: 10px;
   font-weight: 700;
   margin-right: auto;
+  color: var(--primary);
 }
 
 .brand img {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 8px;
 }
 
@@ -91,10 +94,13 @@ a {
 .menu a {
   padding: 4px 2px;
   border-bottom: 2px solid transparent;
+  transition: .3s;
+  font-weight: 500;
 }
 
 .menu a:hover {
   border-color: var(--accent);
+  color: var(--primary);
 }
 
 .icon-btn {
@@ -118,12 +124,28 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
-  padding: 70px 5%;
+  padding: 75px 5%;
+  background: linear-gradient(
+    120deg,
+    #ffecd5,
+    #fff8ef,
+    #ffffff
+  );
+}
+
+body.dark-mode .hero {
+  background: linear-gradient(
+    120deg,
+    #39271b,
+    #211a15,
+    #30231a
+  );
 }
 
 .hero h1 {
   font-size: clamp(2rem, 4.5vw, 3.4rem);
   margin-bottom: 16px;
+  color: var(--primary);
 }
 
 .hero p {
@@ -133,32 +155,40 @@ a {
 }
 
 .hero img {
-  border-radius: 16px;
+  border-radius: 18px;
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  box-shadow: 0 12px 30px rgba(150, 90, 35, .14);
 }
 
 /* ===== 6. TOMBOL ===== */
 .btn {
   display: inline-block;
-  background: var(--primary);
-  color: #fff;
+  background: linear-gradient(135deg, #e58a32, #f2a64f);
+  color: #ffffff;
   border: 0;
   padding: 12px 24px;
-  border-radius: 8px;
+  border-radius: 9px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  box-shadow: 0 5px 14px rgba(220, 130, 40, .20);
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(220, 130, 40, .28);
 }
 
 body.dark-mode .btn {
-  color: #06131b;
+  color: #28180c;
 }
 
 /* ===== 7. SECTION ===== */
 .section {
-  padding: 64px 5%;
+  padding: 65px 5%;
 }
 
 .alt {
@@ -168,13 +198,14 @@ body.dark-mode .btn {
 .section h2 {
   font-size: 2rem;
   margin-bottom: 28px;
+  color: var(--primary);
 }
 
 /* ===== 8. GRID DAN CARD ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  gap: 22px;
 }
 
 .grid.two {
@@ -184,8 +215,15 @@ body.dark-mode .btn {
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 22px;
+  box-shadow: 0 4px 15px rgba(150, 90, 35, .05);
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(150, 90, 35, .12);
 }
 
 .card h3 {
@@ -201,7 +239,6 @@ body.dark-mode .btn {
   padding-left: 18px;
 }
 
-
 /* ===== 9. CARD JURUSAN ===== */
 .card.jurusan {
   position: relative;
@@ -216,46 +253,46 @@ body.dark-mode .btn {
     var(--bg2)
   );
   min-height: 190px;
-  transition: transform .3s, box-shadow .3s, border-color .3s;
+  transition: transform .3s, box-shadow .3s;
 }
 
-/* Warna aksen setiap jurusan */
+/* Warna aksen jurusan */
 .card.jurusan:nth-child(1) {
-  --jurusan-accent: #258bdb;
+  --jurusan-accent: #e58a32;
 }
 
 .card.jurusan:nth-child(2) {
-  --jurusan-accent: #9b59b6;
+  --jurusan-accent: #ed9c52;
 }
 
 .card.jurusan:nth-child(3) {
-  --jurusan-accent: #e67e22;
+  --jurusan-accent: #d97935;
 }
 
 .card.jurusan:nth-child(4) {
-  --jurusan-accent: #e74c3c;
+  --jurusan-accent: #f0ad65;
 }
 
 .card.jurusan:nth-child(5) {
-  --jurusan-accent: #16a085;
+  --jurusan-accent: #c8793e;
 }
 
 .card.jurusan:nth-child(6) {
-  --jurusan-accent: #d4a017;
+  --jurusan-accent: #e6a13e;
 }
 
 .card.jurusan:nth-child(7) {
-  --jurusan-accent: #2980b9;
+  --jurusan-accent: #df9251;
 }
 
 .card.jurusan:nth-child(8) {
-  --jurusan-accent: #8e6e53;
+  --jurusan-accent: #bb7445;
 }
 
 .card.jurusan:nth-child(9) {
-  --jurusan-accent: #27ae60;
+  --jurusan-accent: #efb779;
 }
-/* Judul jurusan */
+
 .jurusan h3 {
   display: inline-block;
   color: var(--jurusan-accent);
@@ -264,7 +301,6 @@ body.dark-mode .btn {
   letter-spacing: .5px;
 }
 
-/* Deskripsi jurusan */
 .jurusan p {
   color: var(--muted);
   line-height: 1.7;
@@ -277,10 +313,9 @@ body.dark-mode .btn {
   margin-bottom: 7px;
 }
 
-/* Efek saat mouse diarahkan */
 .card.jurusan:hover {
   transform: translateY(-7px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, .10);
+  box-shadow: 0 12px 25px rgba(150, 90, 35, .13);
   border-color: var(--jurusan-accent);
 }
 
@@ -295,6 +330,15 @@ textarea {
   background: var(--card);
   color: var(--text);
   font: inherit;
+  outline: none;
+  transition: .3s;
+}
+
+.search:focus,
+input:focus,
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(229, 138, 50, .12);
 }
 
 .search {
@@ -321,20 +365,21 @@ form .btn {
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
+  gap: 16px;
 }
 
 .gallery img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform .2s;
+  transition: transform .3s, box-shadow .3s;
 }
 
 .gallery img:hover {
   transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(150, 90, 35, .16);
 }
 
 /* ===== 12. FAQ ACCORDION ===== */
@@ -367,6 +412,7 @@ form .btn {
 .faq-q::after {
   content: "+";
   font-size: 1.3rem;
+  color: var(--primary);
 }
 
 .faq-item.open .faq-q::after {
@@ -387,9 +433,9 @@ form .btn {
 /* ===== 13. FOOTER ===== */
 .footer {
   text-align: center;
-  padding: 24px;
+  padding: 28px;
   background: var(--card);
-  border-top: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
   color: var(--muted);
 }
 
@@ -398,7 +444,7 @@ form .btn {
   position: fixed;
   inset: 0;
   z-index: 50;
-  background: rgba(0, 0, 0, .85);
+  background: rgba(35, 20, 10, .88);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -411,7 +457,7 @@ form .btn {
 
 .modal img {
   max-height: 90vh;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .tutup {
@@ -434,10 +480,16 @@ form .btn {
   border: 0;
   border-radius: 50%;
   background: var(--accent);
-  color: #12263a;
+  color: #39291e;
   font-size: 1.3rem;
   font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(150, 90, 35, .18);
+  transition: .3s;
+}
+
+.top:hover {
+  transform: translateY(-4px);
 }
 
 .top[hidden] {
@@ -453,6 +505,11 @@ form .btn {
   .hero {
     grid-template-columns: 1fr;
     padding: 40px 5%;
+    gap: 25px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
   }
 
   .menu {
@@ -475,5 +532,13 @@ form .btn {
 
   .menu a {
     padding: 14px 5%;
+  }
+
+  .section {
+    padding: 45px 5%;
+  }
+
+  .grid.two {
+    grid-template-columns: 1fr;
   }
 }
