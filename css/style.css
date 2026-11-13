@@ -1,29 +1,33 @@
 
-/* ===== 1. VARIABEL WARNA ===== */
+/* 1. VARIABEL WARNA */
 :root {
-  --bg: #fffaf4;
-  --bg2: #fff0df;
-  --text: #39291e;
+  --bg: #fffaf5;
+  --bg2: #fff0e2;
+  --text: #38271d;
   --muted: #817064;
-  --primary: #df8735;
-  --accent: #f2b66d;
+  --primary: #e77f25;
+  --primary-dark: #c96516;
+  --accent: #ffc078;
   --card: #ffffff;
-  --border: #f0dfcc;
+  --border: #f1dfcc;
+  --shadow: 0 10px 30px rgba(170, 95, 30, .09);
 }
 
-/* ===== 2. DARK MODE ===== */
+/* 2. DARK MODE */
 body.dark-mode {
-  --bg: #211a15;
-  --bg2: #30231a;
-  --text: #fff0e2;
-  --muted: #c2ad9b;
-  --primary: #f0a354;
+  --bg: #1e1915;
+  --bg2: #2c211a;
+  --text: #fff1e4;
+  --muted: #c4ad9b;
+  --primary: #f3a04e;
+  --primary-dark: #f3a04e;
   --accent: #ffc477;
-  --card: #2b211a;
-  --border: #493629;
+  --card: #30241c;
+  --border: #49372a;
+  --shadow: 0 10px 30px rgba(0, 0, 0, .2);
 }
 
-/* ===== 3. PENGATURAN DASAR ===== */
+/* 3. PENGATURAN DASAR */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -31,20 +35,20 @@ body.dark-mode {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 70px;
+  scroll-padding-top: 80px;
 }
 
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: 'Segoe UI', system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
   transition: background .3s, color .3s;
 }
 
 h1, h2, h3 {
   font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 img {
@@ -57,78 +61,93 @@ a {
   text-decoration: none;
 }
 
-/* ===== 4. NAVBAR ===== */
+::selection {
+  background: var(--accent);
+  color: #38271d;
+}
+
+/* 4. NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 20;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 5%;
+  gap: 15px;
+  padding: 13px 5%;
   background: var(--card);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 3px 15px rgba(170, 100, 35, .08);
+  box-shadow: 0 4px 20px rgba(150, 85, 30, .07);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 700;
+  gap: 12px;
+  font-weight: 800;
   margin-right: auto;
   color: var(--primary);
+  letter-spacing: .4px;
 }
 
 .brand img {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
+  width: 43px;
+  height: 43px;
+  border-radius: 10px;
+  object-fit: contain;
 }
 
 .menu {
   display: flex;
-  gap: 20px;
+  gap: 22px;
 }
 
 .menu a {
-  padding: 4px 2px;
+  padding: 5px 2px;
   border-bottom: 2px solid transparent;
+  font-weight: 600;
+  font-size: .95rem;
   transition: .3s;
-  font-weight: 500;
 }
 
 .menu a:hover {
-  border-color: var(--accent);
   color: var(--primary);
+  border-color: var(--primary);
 }
 
 .icon-btn {
   border: 1px solid var(--border);
-  background: var(--bg);
+  background: var(--bg2);
   color: var(--text);
-  border-radius: 8px;
-  width: 40px;
-  height: 40px;
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
   font-size: 18px;
   cursor: pointer;
+  transition: .3s;
+}
+
+.icon-btn:hover {
+  background: var(--accent);
 }
 
 .hamburger {
   display: none;
 }
 
-/* ===== 5. HERO ===== */
+/* 5. HERO */
 .hero {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 45px;
   align-items: center;
-  padding: 75px 5%;
+  padding: 85px 6%;
+  overflow: hidden;
   background: linear-gradient(
     120deg,
-    #ffecd5,
-    #fff8ef,
+    #ffead2,
+    #fff6eb,
     #ffffff
   );
 }
@@ -136,59 +155,76 @@ a {
 body.dark-mode .hero {
   background: linear-gradient(
     120deg,
-    #39271b,
-    #211a15,
-    #30231a
+    #422b1c,
+    #2c211a,
+    #1e1915
   );
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(244, 160, 75, .12);
+  top: -130px;
+  right: -70px;
+}
+
 .hero h1 {
-  font-size: clamp(2rem, 4.5vw, 3.4rem);
-  margin-bottom: 16px;
-  color: var(--primary);
+  position: relative;
+  font-size: clamp(2.2rem, 4.5vw, 3.7rem);
+  margin-bottom: 20px;
+  color: var(--primary-dark);
+  letter-spacing: -.8px;
 }
 
 .hero p {
   color: var(--muted);
-  margin-bottom: 24px;
-  max-width: 46ch;
+  margin-bottom: 28px;
+  max-width: 48ch;
+  font-size: 1.04rem;
 }
 
 .hero img {
-  border-radius: 18px;
+  position: relative;
+  border-radius: 22px;
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  box-shadow: 0 12px 30px rgba(150, 90, 35, .14);
+  border: 5px solid rgba(255, 255, 255, .8);
+  box-shadow: 0 18px 40px rgba(150, 80, 25, .18);
+  transition: .4s;
 }
 
-/* ===== 6. TOMBOL ===== */
+.hero img:hover {
+  transform: translateY(-5px);
+}
+
+/* 6. TOMBOL */
 .btn {
   display: inline-block;
-  background: linear-gradient(135deg, #e58a32, #f2a64f);
-  color: #ffffff;
+  background: linear-gradient(135deg, #e77f25, #f5a64f);
+  color: #fff;
   border: 0;
-  padding: 12px 24px;
-  border-radius: 9px;
+  padding: 13px 27px;
+  border-radius: 10px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 5px 14px rgba(220, 130, 40, .20);
+  box-shadow: 0 7px 18px rgba(220, 125, 35, .23);
   transition: .3s;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(220, 130, 40, .28);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(220, 125, 35, .3);
 }
 
-body.dark-mode .btn {
-  color: #28180c;
-}
-
-/* ===== 7. SECTION ===== */
+/* 7. SECTION */
 .section {
-  padding: 65px 5%;
+  padding: 75px 6%;
 }
 
 .alt {
@@ -196,16 +232,16 @@ body.dark-mode .btn {
 }
 
 .section h2 {
-  font-size: 2rem;
-  margin-bottom: 28px;
-  color: var(--primary);
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: var(--primary-dark);
 }
 
-/* ===== 8. GRID DAN CARD ===== */
+/* 8. GRID DAN CARD */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
+  gap: 24px;
 }
 
 .grid.two {
@@ -215,19 +251,20 @@ body.dark-mode .btn {
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 22px;
-  box-shadow: 0 4px 15px rgba(150, 90, 35, .05);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: var(--shadow);
   transition: .3s;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(150, 90, 35, .12);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 32px rgba(150, 85, 30, .13);
 }
 
 .card h3 {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  color: var(--primary-dark);
 }
 
 .card p,
@@ -239,24 +276,36 @@ body.dark-mode .btn {
   padding-left: 18px;
 }
 
-/* ===== 9. CARD JURUSAN ===== */
+/* 9. CARD JURUSAN */
 .card.jurusan {
   position: relative;
-  padding: 28px 22px;
+  padding: 30px 24px;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 17px;
   border: 1px solid var(--border);
-  border-top: 4px solid var(--jurusan-accent, var(--primary));
+  border-top: 5px solid var(--jurusan-accent, var(--primary));
   background: linear-gradient(
     145deg,
     var(--card),
     var(--bg2)
   );
-  min-height: 190px;
-  transition: transform .3s, box-shadow .3s;
+  min-height: 195px;
+  transition: .35s;
 }
 
-/* Warna aksen jurusan */
+.card.jurusan::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: var(--jurusan-accent);
+  opacity: .07;
+  right: -35px;
+  bottom: -40px;
+  transition: .35s;
+}
+
 .card.jurusan:nth-child(1) {
   --jurusan-accent: #e58a32;
 }
@@ -319,7 +368,11 @@ body.dark-mode .btn {
   border-color: var(--jurusan-accent);
 }
 
-/* ===== 10. FORM DAN INPUT ===== */
+.card.jurusan:hover::after {
+  transform: scale(1.3);
+}
+
+/* 10. FORM DAN INPUT */
 .search,
 input,
 textarea {
@@ -361,7 +414,7 @@ form .btn {
   margin-top: 16px;
 }
 
-/* ===== 11. GALERI ===== */
+/* 11. GALERI */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -372,7 +425,7 @@ form .btn {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 14px;
   cursor: pointer;
   transition: transform .3s, box-shadow .3s;
 }
@@ -382,23 +435,24 @@ form .btn {
   box-shadow: 0 8px 20px rgba(150, 90, 35, .16);
 }
 
-/* ===== 12. FAQ ACCORDION ===== */
+/* 12. FAQ ACCORDION */
 .faq {
   max-width: 720px;
 }
 
 .faq-item {
   border: 1px solid var(--border);
-  border-radius: 10px;
-  margin-bottom: 10px;
+  border-radius: 12px;
+  margin-bottom: 12px;
   background: var(--card);
   overflow: hidden;
+  box-shadow: 0 3px 12px rgba(150, 90, 35, .04);
 }
 
 .faq-q {
   width: 100%;
   text-align: left;
-  padding: 16px 18px;
+  padding: 17px 20px;
   background: none;
   border: 0;
   color: var(--text);
@@ -407,11 +461,12 @@ form .btn {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .faq-q::after {
   content: "+";
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: var(--primary);
 }
 
@@ -426,20 +481,20 @@ form .btn {
 }
 
 .faq-a p {
-  padding: 0 18px 16px;
+  padding: 0 20px 18px;
   color: var(--muted);
 }
 
-/* ===== 13. FOOTER ===== */
+/* 13. FOOTER */
 .footer {
   text-align: center;
-  padding: 28px;
+  padding: 30px;
   background: var(--card);
-  border-top: 3px solid var(--accent);
+  border-top: 4px solid var(--accent);
   color: var(--muted);
 }
 
-/* ===== 14. MODAL GALERI ===== */
+/* 14. MODAL GALERI */
 .modal {
   position: fixed;
   inset: 0;
@@ -457,7 +512,8 @@ form .btn {
 
 .modal img {
   max-height: 90vh;
-  border-radius: 12px;
+  border-radius: 14px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, .3);
 }
 
 .tutup {
@@ -469,7 +525,7 @@ form .btn {
   cursor: pointer;
 }
 
-/* ===== 15. TOMBOL KEMBALI KE ATAS ===== */
+/* 15. TOMBOL KEMBALI KE ATAS */
 .top {
   position: fixed;
   right: 20px;
@@ -496,7 +552,7 @@ form .btn {
   display: none;
 }
 
-/* ===== 16. RESPONSIVE ===== */
+/* 16. RESPONSIVE */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -504,12 +560,12 @@ form .btn {
 
   .hero {
     grid-template-columns: 1fr;
-    padding: 40px 5%;
-    gap: 25px;
+    padding: 45px 5%;
+    gap: 28px;
   }
 
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
   }
 
   .menu {
@@ -535,7 +591,11 @@ form .btn {
   }
 
   .section {
-    padding: 45px 5%;
+    padding: 50px 5%;
+  }
+
+  .section h2 {
+    font-size: 1.9rem;
   }
 
   .grid.two {
